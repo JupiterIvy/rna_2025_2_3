@@ -45,6 +45,28 @@ Hyperparameters studied:
 - lr = trial.suggest_float("lr", 1e-5, 5e-4, log=True)
 - dropout = trial.suggest_float("dropout", 0.0, 0.5)
 
+
+### Best Hiperparameters
+
+- ResNet152
+```
+'unfreeze_ratio': 0.4, 
+'batch_size': 12,
+'optimizer': 'rmsprop', 
+'lr': 3.3988121810437836e-05, 
+'dropout': 0.2500453237976704
+```
+
+
+- EfficientNetV2 M
+```
+'unfreeze_ratio': 1.0,
+'batch_size': 8,
+'optimizer': 'adamw',
+'lr': 0.000305059358461127,
+'dropout': 0.17436330549094298
+```
+
 ## Stratified Cross-Validation
 
 The goal of stratified cross-validation is:
