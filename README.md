@@ -31,19 +31,19 @@ Optuna is a Python library for hyperparameter optimization (HPO) designed to be 
 
 It uses the following concepts:
 
-Study: logical unit of optimization — a study that groups many trials (attempts) to maximize/minimize an objective function.
-Trial: an execution of the objective with a specific set of hyperparameters; each trial returns a performance value (and may report intermediate values).
-Trial.suggest_*: calls to the objective function (trial.suggest_float, trial.suggest_int, trial.suggest_categorical, etc.) used to define the space and request values ​​from the sampler during execution.
-Sampler: component that determines how to generate new hyperparameter candidates (e.g., TPESampler, RandomSampler, CmaEsSampler, etc.).
-Pruner: component that decides, based on intermediate metrics, whether a trial should be interrupted before completion (e.g., MedianPruner, SuccessiveHalvingPruner, HyperbandPruner).
-Storage: backends for persistence (SQLite/MySQL/Postgres via RDBStorage, JournalStorage, etc.), necessary for saving, resuming, and parallelizing studies.
+- Study: logical unit of optimization — a study that groups many trials (attempts) to maximize/minimize an objective function.
+- Trial: an execution of the objective with a specific set of hyperparameters; each trial returns a performance value (and may report intermediate values).
+- Trial.suggest_*: calls to the objective function (trial.suggest_float, trial.suggest_int, trial.suggest_categorical, etc.) used to define the space and request values ​​from the sampler during execution.
+- Sampler: component that determines how to generate new hyperparameter candidates (e.g., TPESampler, RandomSampler, CmaEsSampler, etc.).
+- Pruner: component that decides, based on intermediate metrics, whether a trial should be interrupted before completion (e.g., MedianPruner, SuccessiveHalvingPruner, HyperbandPruner).
+- Storage: backends for persistence (SQLite/MySQL/Postgres via RDBStorage, JournalStorage, etc.), necessary for saving, resuming, and parallelizing studies.
 
 Hyperparameters studied:
-unfreeze_ratio = trial.suggest_categorical("unfreeze_ratio", [0.2, 0.4, 0.6, 1.0])
-batch_size = trial.suggest_categorical("batch_size", [8, 12])
-optimizer_name = trial.suggest_categorical("optimizer", ["adamw", "adam", "rmsprop"])
-lr = trial.suggest_float("lr", 1e-5, 5e-4, log=True)
-dropout = trial.suggest_float("dropout", 0.0, 0.5)
+- unfreeze_ratio = trial.suggest_categorical("unfreeze_ratio", [0.2, 0.4, 0.6, 1.0])
+- batch_size = trial.suggest_categorical("batch_size", [8, 12])
+- optimizer_name = trial.suggest_categorical("optimizer", ["adamw", "adam", "rmsprop"])
+- lr = trial.suggest_float("lr", 1e-5, 5e-4, log=True)
+- dropout = trial.suggest_float("dropout", 0.0, 0.5)
 
 ## Stratified Cross-Validation
 
